@@ -51,9 +51,9 @@ def convert_and_upload_supervisely_project(
     meta = sly.ProjectMeta(obj_classes=[obj_class])
     api.project.update_meta(project.id, meta.to_json())
 
-    images_path = "/home/alex/DATASETS/TODO/NeonTree/training/RGB"
-    eval_images_path = "/home/alex/DATASETS/TODO/NeonTree/evaluation/evaluation/RGB"
-    bboxes_path = "/home/alex/DATASETS/TODO/NeonTree/annotations/annotations"
+    images_path = "/home/iwatkot/supervisely/ninja-datasets/neontree/training/RGB"
+    eval_images_path = "/home/iwatkot/supervisely/ninja-datasets/neontree/evaluation/RGB"
+    bboxes_path = "/home/iwatkot/supervisely/ninja-datasets/neontree/annotations"
 
     images_pathes = []
     for image_name in os.listdir(images_path):

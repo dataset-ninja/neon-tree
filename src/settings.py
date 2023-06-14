@@ -20,7 +20,7 @@ RELEASE_YEAR: int = 2022
 HOMEPAGE_URL: str = "https://zenodo.org/record/5914554#.Yj2n739Bzmh"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = None
+PREVIEW_IMAGE_ID: int = 395738
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/neon-tree"
