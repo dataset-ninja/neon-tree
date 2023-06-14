@@ -1,11 +1,11 @@
 If you make use of the NeonTreeEvaluation data, please cite the following reference:
 
-``` bibtex 
+```bibtex
 @misc{NeonTreeEvaluation,
-	author = "TO BE FILLED MANUALLY!",
-	title = "Data for the NeonTreeEvaluation Benchmark",
+	author = "Ben Weinstein, Sergio Marconi, & Ethan White",
+	title = "Data for the NeonTreeEvaluation Benchmark (0.2.2)",
 	year = {2022},
-	url = "https://zenodo.org/record/5914554#.Yj2n739Bzmh"
+	url = "https://doi.org/10.5281/zenodo.5914554"
 }
 ```
 
