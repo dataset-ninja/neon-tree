@@ -1,9 +1,7 @@
-**Data for the NeonTreeEvaluation Benchmark** is a dataset for object detection tasks. It is applicable or relevant across various domains.
+**Data for the NeonTreeEvaluation Benchmark** is a dataset for object detection tasks. It is used in the ecological research, and forestry domain. 
 
 The dataset consists of 2295 images with 8672 labeled objects belonging to 1 single class (*tree*).
 
-Each image in the NeonTreeEvaluation dataset has bounding boxes annotations. There are 2095 (91% of the total) unlabeled images (i.e. without annotations). There is 1 split in the dataset: *ds* (2295 images). The dataset was released in 2022.
+Images in the NeonTreeEvaluation dataset have bounding box annotations. There are 2095 (91% of the total) unlabeled images (i.e. without annotations). There are no pre-defined <i>train/val/test</i> splits in the dataset. The dataset was released in 2022 by the [University of Florida](https://www.ufl.edu/).
 
-Here is the visualized example grid with annotations:
-
-[Dataset classes](https://github.com/dataset-ninja/neon-tree/raw/main/visualizations/horizontal_grid.webm)
+<img src="https://github.com/dataset-ninja/neon-tree/raw/main/visualizations/poster.png">
