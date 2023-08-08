@@ -20,7 +20,7 @@ PROJECT_NAME_FULL: Optional[str] = "Data for the NeonTreeEvaluation Benchmark"
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.CC_BY_4_0()
-INDUSTRIES: List[Industry] = [Industry.GeneralDomain()]
+INDUSTRIES: List[Industry] = [Domain.Forestry()]
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [Research.Ecological(), Domain.Forestry()]
 CATEGORY: Category = Category.Environmental()
 
