@@ -1,20 +1,4 @@
-# Broad-Scale Remote Sensing for Forest Inventories: Benchmark Dataset and Evaluation
-
-## Introduction
-
 The authors of the **RGB** part of the **NeonTreeEvaluation Benchmark** dataset aimed to address the challenges associated with broad-scale remote sensing for building forest inventories combining RGB, LiDAR, and hyperspectral sensor data from the USA National Ecological Observatory Network's Airborne Observation Platform. The dataset includes over 6,000 image-annotated crowns, 400 field-annotated crowns, and 3,000 canopy stem points, covering a diverse range of forest types. An R package is provided to standardize evaluation metrics, facilitating method comparisons. Additionally, the dataset offers more than 10,000 training crowns for optional use. 
-
-| Item (format) | Type | Description (NEON ID) |
-| --- | --- | --- |
-| 10cm RGB data (.tif) | Sensor data | DP3.30010.001 |
-| LiDAR point cloud (~5 pts/m) (.laz) | Sensor data | DP1.30003.001 |
-| 1m gridded raster of canopy height model (.tif) | Sensor data | DP3.30015.001 |
-| 1m 426 band hyperspectral data | Sensor data | DP1.30006.001 |
-| Image-annotated crowns (.xml) | Evaluation data (6490 trees) | Bounding box annotations made by visually assessing the sensor data |
-| Field-annotated crowns (.shp) | Evaluation data (562 trees) | Polygon annotations by visually assessing the hyperspectral data while physically in the field next to target tree |
-| Field-collected stems (.csv) | Evaluation data (4365 trees) | NEON collected stem points for each individual tree. Filtered from the Woody Vegetation Structure data product (NEON ID: DP1.10098.001) |
-
-<span style="font-size: smaller; font-style: italic;">Data description.</span>
 
 ## RGB data
 
@@ -51,17 +35,17 @@ In conjunction with sensor data, the authors collect information on trees within
 
 The objective of this benchmark, as set by the authors of the dataset, is to evaluate algorithms for canopy tree detection and delineation. The term 'canopy crown detection' is adopted to differentiate between the tasks of 'tree detection,' involving the identification of the crown center of individual trees, and 'crown delineation' or 'crown segmentation,' often defined as identifying the boundary edge of individual crowns. The term ‘canopy’ is often implicitly assumed in most studies, given that optical data and low-density LiDAR data can only reflect the structure in the upper canopy. The evaluation of detection methods in this benchmark dataset involves assessing detections using three types of evaluation data: 1) image-annotated crown bounding boxes for 22 sites in the NEON network, 2) field-annotated crown polygons for two sites in the NEON network (Table 2), and 3) field-collected stem points from 14 sites from the NEON Woody Vegetation Structure dataset. For each of these data types, the authors outline how the data were collected and the evaluation procedure for canopy crown detection.
 
-### Image-Annotated Crowns
+## Image-Annotated Crowns
 
 The authors selected airborne imagery from 22 sites surveyed by the NEON AOP. The sites were chosen based on the availability of the three types of sensor data, as well as representation of forest conditions across the US, including diversity in species composition, stand age, and canopy openness. The evaluation images were carefully annotated by comparing the RGB, LiDAR, and hyperspectral data. Using all three products facilitated more accurate distinction of neighboring trees by simultaneously assessing visual patterns (RGB), utilizing variation in spectral signatures to distinguish different species (hyperspectral), and considering the three-dimensional structure of the tree (LiDAR). The evaluation plot overlaps with a NEON 40m x 40m plot. Within each of these plots, NEON field crews survey a 20x20 subplot; therefore, while field data are available for most plots in the dataset, they do not cover every tree in the image.
 
 
 <img src="https://github.com/dataset-ninja/neon-tree-evaluation/assets/78355358/59588358-a9af-4443-932d-28275d07227a" alt="image" width="800">
 
-<span style="font-size: smaller; font-style: italic;">. Image-annotated tree crowns for the evaluation data set for two sites in the National Ecological Observation Network. Using the RGB, LiDAR and hyperspectral products together contributes to more careful crown annotation. For some sites, such as MLBS (top row), the RGB and hyperspectral data are useful for differentiating overlapping crowns. For other sites, such as OSBS (bottom row) the LiDAR point cloud, shown as a rasterized height image, is most useful in capturing crown extent. The RGB-stretch image was produced by transforming the RGB data in the three principal components space. To create a three-band hyperspectral image, we used channels from the red, blue and infrared spectrum to capture changes in reflectance not apparent in the RGB imagery.</span>
+<span style="font-size: smaller; font-style: italic;">Image-annotated tree crowns for the evaluation data set for two sites in the National Ecological Observation Network. Using the RGB, LiDAR and hyperspectral products together contributes to more careful crown annotation. For some sites, such as MLBS (top row), the RGB and hyperspectral data are useful for differentiating overlapping crowns. For other sites, such as OSBS (bottom row) the LiDAR point cloud, shown as a rasterized height image, is most useful in capturing crown extent. The RGB-stretch image was produced by transforming the RGB data in the three principal components space. To create a three-band hyperspectral image, we used channels from the red, blue and infrared spectrum to capture changes in reflectance not apparent in the RGB imagery.</span>
 
 
-### Field-Annotated Crowns
+## Field-Annotated Crowns
 
 Individual trees were annotated by visiting two NEON sites and mapping the tree crown boundaries as polygons in the remote sensing images using a field tablet and GIS software while looking at each tree from the ground. False-color composites from the hyperspectral data, RGB, and LiDAR canopy height model were loaded onto tablet computers that were equipped with GPS receivers. While in the field, researchers digitized crown boundaries based on the location, size, and shape of the crown. Only alive trees with leaf-on vegetation were selected. Trees were mapped in 2014 and 2015, and all polygons were manually checked against the most recent NEON imagery. Adjustments to crown shape and position were refined after examining multiple years of RGB imagery. No adjustments to the polygons were made due to crown expansion.
 

@@ -15,4 +15,4 @@ If you make use of the NeonTreeEvaluation data, please cite the following refere
 }
 ```
 
-[🔗 Source](https://zenodo.org/record/5914554/export/hx)
+[Source](https://zenodo.org/record/5914554/export/hx)
