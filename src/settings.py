@@ -13,14 +13,14 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "NeonTreeEvaluation"
-PROJECT_NAME_FULL: Optional[str] = "Data for the NeonTreeEvaluation Benchmark"
+PROJECT_NAME: str = "NeonTreeEvaluation: RGB"
+PROJECT_NAME_FULL: Optional[str] = "Data for the NeonTreeEvaluation Benchmark (RGB)"
+HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.CC_BY_4_0()
-INDUSTRIES: List[Industry] = [Domain.Forestry()]
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [Research.Ecological(), Domain.Forestry()]
 CATEGORY: Category = Category.Environmental()
 
@@ -34,7 +34,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://zenodo.org/record/5914554#.Yj2n739Bzmh"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 395738
+PREVIEW_IMAGE_ID: int = 11868945
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/neon-tree"
@@ -44,9 +44,9 @@ GITHUB_URL: str = "https://github.com/dataset-ninja/neon-tree"
 ### * Optional after uploading ###
 ##################################
 DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = {
-    "annotations": "https://zenodo.org/record/5914554/files/annotations.zip?download=1",
-    "evaluation": "https://zenodo.org/record/5914554/files/evaluation.zip?download=1",
-    "training": "https://zenodo.org/record/5914554/files/training.zip?download=1",
+    "annotations.zip": "https://zenodo.org/record/5914554/files/annotations.zip?download=1",
+    "evaluation.zip": "https://zenodo.org/record/5914554/files/evaluation.zip?download=1",
+    "training.zip": "https://zenodo.org/record/5914554/files/training.zip?download=1",
 }
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
@@ -54,13 +54,21 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://www.biorxiv.org/content/10.1101/2020.11.16.385088v1"
+BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {
+    "GitHub": "https://github.com/weecology/NeonTreeEvaluation_package"
+}
+
 CITATION_URL: Optional[str] = "https://zenodo.org/record/5914554/export/hx"
 AUTHORS: Optional[List[str]] = ["Ben Weinstein", "Sergio Marconi", "Ethan White"]
+AUTHORS_CONTACTS: Optional[List[str]] = ["ben.weinstein@weecology.org"]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "University of Florida"
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.ufl.edu/"
 
-SLYTAGSPLIT: Optional[Dict[str, List[str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, List[str]]] = {
+    "__PRETEXT__": "Additionally, the images has ***site_id*** and ***site_name***. The images in *evaluation* split are grouped by ***grid_id***. Also, 175 images are marked with ***unnamed*** tag"
+}
 TAGS: List[str] = None
 
 ##################################
@@ -81,6 +89,8 @@ def get_settings():
 
     settings = {
         "project_name": PROJECT_NAME,
+        "project_name_full": PROJECT_NAME_FULL or PROJECT_NAME,
+        "hide_dataset": HIDE_DATASET,
         "license": LICENSE,
         "applications": APPLICATIONS,
         "category": CATEGORY,
@@ -96,12 +106,14 @@ def get_settings():
         raise ValueError("Please fill all fields in settings.py after uploading to instance.")
 
     settings["release_date"] = RELEASE_DATE
-    settings["project_name_full"] = PROJECT_NAME_FULL or PROJECT_NAME
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
+    settings["repository"] = REPOSITORY
+    settings["blog"] = BLOGPOST
     settings["citation_url"] = CITATION_URL
     settings["authors"] = AUTHORS
+    settings["authors_contacts"] = AUTHORS_CONTACTS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
