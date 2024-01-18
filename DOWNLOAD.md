@@ -1,6 +1,6 @@
 Dataset **NeonTreeEvaluation: RGB** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/s/G/AC/JO00n3KfGKCFIfyWwdNczCRyM0rv7cNYuDEAID4QZfTVKi9UPYTPqMlq9PBRWykqI7kqAhEhIvHdGjLIg6iZYLrbHQC4QIO86aSNNVtLiVmBOX3Gac7Q6tTf7nRW.tar)
+ [Download](https://www.dropbox.com/scl/fi/p8rr68ly01fp82uazipkm/neontreeevaluation-rgb-DatasetNinja.tar?rlkey=dy3f7vw76mi48ft8hgy3mjgoe&dl=1)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
