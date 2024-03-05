@@ -69,7 +69,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.ufl.edu/"
 SLYTAGSPLIT: Optional[Dict[str, List[str]]] = {
     "__PRETEXT__": "Additionally, the images has ***site_id*** and ***site_name***. The images in *evaluation* split are grouped by ***grid_id***. Also, 175 images are marked with ***unnamed*** tag"
 }
-TAGS: List[str] = ['multi-view']
+TAGS: List[str] = ['multi-view', "multi-modal"]
 
 ##################################
 ###### ? Checks. Do not edit #####
